@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EcoConnect – Home</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  
+  
+}
+
+/* Home page background */
+#home {
+  background-image: url("background\ image.png"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  padding: 80px 20px;
+}
+
+/* Navbar */
+header {
+  background: rgba(53, 95, 35, 0.8);
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+.section-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  width: 280px;
+  background: white;
+  margin: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.card-content {
+  padding: 15px;
+}
+
+/* Join Us */
+.btn {
+  background: #28a745;
+  padding: 12px 20px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #1e7e34;
+}
+.form input,
+.form textarea {
+  width: 70%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+/* Footer */
+footer {
+  background: rgb(248, 247, 247);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+</style>
+
+<script>
+function validateForm() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const msg = document.getElementById("msg").value.trim();
+
+  if (name === "" || email === "" || msg === "") {
+    alert("All fields are required!");
+    return false;
+  }
+  if (!email.includes("@") || !email.includes(".")) {
+    alert("Enter a valid email!");
+    return false;
+  }
+
+  alert("Form submitted successfully!");
+}
+</script>
+
+</head>
+<body>
+
+<header>
+  <div class="navbar-container">
+    <h1 class="logo">EcoConnect</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="plantation.html">Tree Plantation</a>
+      <a href="wildlife.html">Wildlife</a>
+      <a href="biodiversity.html">Biodiversity</a>
+      <a href="sdg15.html">SDG 15</a>
+      <a href="#join">Join Us</a>
+    </nav>
+  </div>
+</header>
+
+<section id="home" class="section">
+  <h2 class="section-title">🌿 Welcome to EcoConnect</h2>
+  <p>Working to conserve forests, wildlife & biodiversity for a greener planet.</p><br>
+
+  <div class="cards">
+    <div class="card" onclick="location.href='plantation.html'">
+      <img src="tree plantation.jpg" />
+      <div class="card-content">
+        <b>TREE PLANTATION</b>
+        <p>Restoring forests with community support.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="location.href='wildlife.html'">
+      <img src="tiger.jpg" />
+      <div class="card-content">
+        <b>WILDLIFE PROTECTION</b>
+        <p>Protecting endangered species.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="location.href='biodiversity.html'">
+      <img src="IMG_7254.png" />
+      <div class="card-content">
+        <b>BIODIVERSITY MAPPING</b>
+        <p>Tracking species & ecosystems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="join" class="section">
+  <h2 class="section-title">🙌 Join EcoConnect</h2>
+  <p>Become a volunteer and help protect nature!</p>
+
+  <div class="form">
+    <input id="name" type="text" placeholder="Your Name" />
+    <input id="email" type="email" placeholder="Email Address" />
+    <textarea id="msg" placeholder="Why do you want to join?"></textarea>
+    <br />
+    <button class="btn" onclick="validateForm()">Submit</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 EcoConnect | Life on Land – SDG 15</p>
+</footer>
+
+</body>
+</html>
